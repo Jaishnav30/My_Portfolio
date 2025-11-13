@@ -1,0 +1,198 @@
+:root {
+    --bg: #0f1724;
+    --panel: #0b1220;
+    --card: #0f1728;
+    --muted: #94a3b8;
+    --accent: #7c3aed;
+    --glass: rgba(255, 255, 255, 0.04)
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, system-ui, Arial;
+    background: linear-gradient(180deg, #08101a 0%, #081827 60%);
+    color: #e6eef8
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: transparent
+}
+
+.brand h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600
+}
+
+.brand .accent {
+    color: var(--accent)
+}
+
+nav a {
+    color: inherit;
+    margin: 0 .6rem;
+    text-decoration: none
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: .6rem
+}
+
+.btn {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: .6rem .9rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none
+}
+
+.btn.ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06)
+}
+
+.hero {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), transparent);
+    border-radius: 12px
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6)
+}
+
+.hero-text h2 {
+    margin: .2rem 0
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.4rem
+}
+
+.card {
+    background: var(--glass);
+    padding: 1rem;
+    border-radius: 12px;
+    backdrop-filter: blur(6px)
+}
+
+.contact {
+    margin-top: 1.6rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1.6rem;
+    color: var(--muted)
+}
+
+
+/* Resume page */
+.resume {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1rem
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1rem;
+    border-radius: 10px
+}
+
+.avatar-sm {
+    width: 84px;
+    height: 84px;
+    border-radius: 10px
+}
+
+.resume-right {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1rem;
+    border-radius: 10px
+}
+
+.resume-right h3 {
+    margin-top: 0
+}
+
+.timeline ol {
+    list-style: none;
+    padding: 0
+}
+
+.timeline li {
+    padding: 1rem;
+    border-left: 3px dashed rgba(255, 255, 255, 0.03);
+    margin-bottom: 1rem
+}
+
+.time {
+    color: var(--muted)
+}
+
+
+/* Light theme support via .light class on body */
+body.light {
+    background: linear-gradient(180deg, #f6f8fb, #fff);
+    color: #062542
+}
+
+body.light :root {
+    --accent: #6b21a8
+}
+
+body.light .btn {
+    color: white
+}
+
+body.light .site-footer {
+    color: #334155
+}
+
+
+/* small screens */
+@media(max-width:800px) {
+    .resume {
+        grid-template-columns: 1fr
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start
+    }
+}
