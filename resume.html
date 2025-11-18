@@ -1,19 +1,24 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jaishnav Kalmangi — Resume</title>
-  <meta name="description" content="Resume of Jaishnav (Jai) — Embedded systems & telemetry, web developer. ESP32, LoRa, BMP280.">
+  <title>Jaishnav Kalmangi — Space Technology Resume</title>
+  <meta name="description"
+    content="Resume of Jaishnav (Jai) — Embedded systems & telemetry, web developer. ESP32, LoRa, BMP280.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/resume.css">
 </head>
 
 <body class="resume-page single-column">
 
-  <!-- HERO / INTRO SECTION -->
+  <main class="resume-container"></main>
+
   <section id="hero">
     <div class="hero-content">
+      <div class="stars"></div>
+      <div class="twinkling"></div>
       <h1>Jaishnav Kalmangi</h1>
       <h2>5th Sem Computer Science Engineering @ RNSIT</h2>
       <h3>Bengaluru, India</h3>
@@ -31,108 +36,138 @@
           Python & Network Enthusiast 🚀
         </p>
       </div>
+      <button class="scroll-indicator" onclick="scrollToNextSection()">
+        <span>Explore My Universe</span>
+        <div class="arrow"></div>
+      </button>
     </div>
   </section>
 
-  <!-- MAIN RESUME CONTENT -->
-  <main class="resume-container">
+  <section id="projects" class="section fade-in">
+    <div class="planet planet-1"></div>
+    <h3>Mission Projects</h3>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section fade-in">
-      <h3>Selected Projects</h3>
+    <article class="project-item">
+      <div class="project-icon">🛰️</div>
+      <h4>ATMAX - Aerial Telemetry Monitoring and Analysis eXperiment</h4>
+      <p class="muted">ESP32 • Python • Matplotlib • Flask</p>
+      <p>
+        Built an ESP32-based telemetry payload that transmits altitude, pressure, latitude, and longitude
+        to a ground station using ESP-NOW protocol. Designed a Flask dashboard for live and post-flight analysis.
+      </p>
+      <p><a href="https://github.com/Jaishnav30/ATMAX" target="_blank">View on GitHub</a></p>
+    </article>
 
-      <article class="project-item">
-        <h4>ATMAX - Aerial Telemetry Monitoring and Analysis eXperiment</h4>
-        <p class="muted">ESP32 • Python • Matplotlib • Flask</p>
-        <p>
-          Built an ESP32-based telemetry payload that transmits altitude, pressure, latitude, and longitude 
-          to a ground station using ESP-NOW protocol. Designed a Flask dashboard for live and post-flight analysis.
-        </p>
-        <p><a href="https://github.com/Jaishnav30/ATMAX" target="_blank">View on GitHub</a></p>
-      </article>
+    <article class="project-item">
+      <div class="project-icon">📊</div>
+      <h4>Space Missions Data Analysis</h4>
+      <p class="muted">Python • Plotly • Next.js</p>
+      <p>
+        Analyzed space missions (1957–2022) using Python and visualized trends, launch centers, and success rates.
+        Built a Next.js dashboard to display interactive insights.
+      </p>
+      <p><a href="https://da-project-1.vercel.app" target="_blank">Live Website</a></p>
+    </article>
+  </section>
 
-      <article class="project-item">
-        <h4>Space Missions Data Analysis</h4>
-        <p class="muted">Python • Plotly • Next.js</p>
-        <p>
-          Analyzed space missions (1957–2022) using Python and visualized trends, launch centers, and success rates.
-          Built a Next.js dashboard to display interactive insights.
-        </p>
-        <p><a href="https://da-project-1.vercel.app" target="_blank">Live Website</a></p>
-      </article>
-    </section>
+  <!-- EDUCATION -->
+  <section id="education" class="education section fade-in">
+    <div class="planet planet-2"></div>
+    <h3>Education Journey</h3>
 
-    <!-- EDUCATION -->
-    <section id="education" class="education section fade-in">
-      <h3>Education Journey</h3>
+    <div class="edu-item">
+      <div class="edu-icon">🚀</div>
+      <h4>B.E — Computer Science & Engineering</h4>
+      <p class="muted">RNS Institute of Technology | 2023 – Present</p>
+      <ul>
+        <li>Relevant coursework: ATMAX, Space Mission Data Visualization Platform</li>
+      </ul>
+    </div>
 
-      <div class="edu-item">
-        <h4>B.E — Computer Science & Engineering</h4>
-        <p class="muted">RNS Institute of Technology | 2023 – Present</p>
+    <div class="edu-item">
+      <div class="edu-icon">🛸</div>
+      <h4>Pre-University College</h4>
+      <p class="muted">RV PU College | 2021 – 2023</p>
+      <ul>
+        <li>PUC Board: 92.5%</li>
+      </ul>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-icon">⭐</div>
+      <h4>High School</h4>
+      <p class="muted">Prarthana Education Society | 2011 – 2021</p>
+      <ul>
+        <li>10th Board: 96.16%</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section fade-in">
+    <div class="planet planet-3"></div>
+    <h3>Mission Experience</h3>
+    <article class="project-item">
+      <div class="project-icon">🛡️</div>
+      <h4>Intern — Infosys Springboard</h4>
+      <p class="muted">November 2025</p>
+      <p>
+        Completed virtual modules on cybersecurity and project-based learning.
+        Gained hands-on exposure to real-world problem-solving using Python and web tech.
+      </p>
+    </article>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section fade-in">
+    <div class="planet planet-4"></div>
+    <h3>Technical Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <h4>Languages</h4>
         <ul>
-          <li>Relevant coursework: ATMAX, Space Mission Data Visualization Platform</li>
+          <li>C / C++</li>
+          <li>Python</li>
         </ul>
       </div>
-
-      <div class="edu-item">
-        <h4>Pre-University College</h4>
-        <p class="muted">RV PU College | 2021 – 2023</p>
-        <ul><li>PUC Board: 92.5%</li></ul>
+      <div class="skill-card">
+        <div class="skill-icon">🔌</div>
+        <h4>Hardware & Embedded</h4>
+        <ul>
+          <li>ESP32 / ESP-NOW</li>
+          <li>BMP280 / BME280</li>
+        </ul>
       </div>
-
-      <div class="edu-item">
-        <h4>High School</h4>
-        <p class="muted">Prarthana Education Society | 2011 – 2021</p>
-        <ul><li>10th Board: 96.16%</li></ul>
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h4>Web & Tools</h4>
+        <ul>
+          <li>HTML / CSS / JS</li>
+          <li>Flask / Next.js</li>
+          <li>Git / Linux</li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section fade-in">
-      <h3>Experience & Internships</h3>
-      <article>
-        <h4>Intern — Infosys Springboard</h4>
-        <p class="muted">November 2025</p>
-        <p>
-          Completed virtual modules on cybersecurity and project-based learning. 
-          Gained hands-on exposure to real-world problem-solving using Python and web tech.
-        </p>
-      </article>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section fade-in">
-      <h3>Technical Skills</h3>
-      <div class="skills-grid">
-        <div>
-          <h4>Languages</h4>
-          <ul><li>C / C++</li><li>Python</li></ul>
-        </div>
-        <div>
-          <h4>Hardware & Embedded</h4>
-          <ul><li>ESP32 / ESP-NOW</li><li>BMP280 / BME280</li></ul>
-        </div>
-        <div>
-          <h4>Web & Tools</h4>
-          <ul><li>HTML / CSS / JS</li><li>Flask / Next.js</li><li>Git / Linux</li></ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section fade-in">
-      <h3>Get in Touch</h3>
-      <p>
-        Interested in collaborating or discussing space tech ideas?  
-        Reach out via <a href="mailto:you@example.com">email</a> or connect on 
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>.
-      </p>
-    </section>
+  <!-- CONTACT -->
+  <section id="contact" class="section fade-in">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <h3>Mission Control</h3>
+    <p>
+      Interested in collaborating or discussing space tech ideas?
+      Reach out via <a href="mailto:you@example.com">email</a> or connect on
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>.
+    </p>
+    <div class="contact-rocket">🚀</div>
+  </section>
 
   </main>
 
   <footer class="site-footer">
-    <small>© 2025 Jaishnav Kalmangi — Built with curiosity 🚀</small>
+    <small>© 2025 Jaishnav Kalmangi — Exploring the digital universe 🚀</small>
   </footer>
 
   <script>
@@ -145,6 +180,53 @@
     }, { threshold: 0.2 });
 
     fadeElems.forEach(el => observer.observe(el));
+
+    function scrollToNextSection() {
+      const sections = document.querySelectorAll('.section');
+      const currentScroll = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      for (let i = 0; i < sections.length; i++) {
+        const sectionTop = sections[i].offsetTop;
+        const sectionBottom = sectionTop + windowHeight;
+
+        // If we're in this section (with some tolerance)
+        if (currentScroll >= sectionTop - 50 && currentScroll < sectionBottom - 50) {
+          if (sections[i + 1]) {
+            sections[i + 1].scrollIntoView({ behavior: 'smooth' });
+          }
+          break;
+        }
+      }
+    }
+
+    // Optional: Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === ' ') {
+        e.preventDefault();
+        scrollToNextSection();
+      }
+    });
+
+    // Optional: Touch swipe for mobile
+    let startY = 0;
+    document.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+    });
+
+    document.addEventListener('touchend', (e) => {
+      const endY = e.changedTouches[0].clientY;
+      const diff = startY - endY;
+
+      if (Math.abs(diff) > 50) { // Minimum swipe distance
+        if (diff > 0) {
+          // Swiped up - go to next section
+          scrollToNextSection();
+        }
+      }
+    });
+
   </script>
 </body>
+
 </html>
