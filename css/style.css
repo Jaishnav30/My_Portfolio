@@ -184,6 +184,15 @@ body.light .site-footer {
     color: #334155
 }
 
+.contact-link {
+  color: #7c3aed; /* purple */
+  text-decoration: none;
+}
+.contact-link:hover {
+  color: #a855f7;
+  text-decoration: underline;
+}
+
 
 /* small screens */
 @media(max-width:800px) {

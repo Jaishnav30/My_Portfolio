@@ -8,6 +8,13 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+
 /* ===== SNAP SCROLLING ===== */
 html {
   scroll-snap-type: y mandatory;
@@ -242,105 +249,73 @@ body {
   box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
 }
 
-/* ===== PROJECTS ===== */
-.project-item {
-  background: rgba(30, 41, 59, 0.7);
-  border-radius: 10px;
-  padding: 30px;
-  margin: 20px 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  max-width: 700px;
-  text-align: left;
-  position: relative;
-  z-index: 1;
-  border: 1px solid rgba(100, 150, 255, 0.2);
-  backdrop-filter: blur(5px);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+/* ================================================================
+   🚀 EDUCATION — COMPLETE REWRITE (WORKING FINAL VERSION)
+   ================================================================*/
 
-.project-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-.project-item h4 {
-  color: #93c5fd;
-  margin-bottom: 10px;
-}
-
-.project-item .muted {
-  color: #9ca3af;
-  font-size: 0.9rem;
-}
-
-.project-icon {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-/* ===== EDUCATION TIMELINE ===== */
 .education {
   position: relative;
   padding: 80px 10%;
+  overflow: visible;
 }
 
-.education::before {
+.edu-wrapper {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  margin-top: 40px;
+}
+
+/* Curved Dashed Orbit Path */
+.edu-wrapper::before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 750px;
+
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='750'><path d='M 150 80 C 250 200, 350 100, 450 230 S 650 420, 750 600'stroke=\"%2360a5fa\"stroke-width=\"4\"stroke-dasharray=\"14 14\"fill=\"none\" /></svg>");
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+/* Education Boxes */
+.edu-wrapper .edu-item {
+  position: absolute;
+  width: 42%;
+  background: rgba(30, 41, 59, 0.75);
+  padding: 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(100, 150, 255, 0.25);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+  z-index: 2;
+}
+
+/* 1 — RNSIT (top-left) */
+.edu-wrapper .edu-item:nth-of-type(1) {
+  top: -20px;
+  left: 6%;
+}
+
+/* 2 — PU College (center) */
+.edu-wrapper .edu-item:nth-of-type(2) {
+  top: 200px;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, #60a5fa, #3b82f6, #1d4ed8);
-  border-radius: 2px;
 }
 
-.edu-item {
-  position: relative;
-  margin-bottom: 60px;
-  width: 50%;
-  padding: 20px;
-  background: rgba(30, 41, 59, 0.7);
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  border: 1px solid rgba(100, 150, 255, 0.2);
-  backdrop-filter: blur(5px);
-  z-index: 1;
+/* 3 — High School (right) */
+.edu-wrapper .edu-item:nth-of-type(3) {
+  top: 430px;
+  right: 6%;
 }
 
-.edu-item:nth-child(odd) {
-  left: 0;
-  transform: translateX(-5%);
-}
-
-.edu-item:nth-child(even) {
-  left: 50%;
-  transform: translateX(5%);
-}
-
-.edu-item::before {
-  content: "";
-  position: absolute;
-  top: 30px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #3b82f6;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
-}
-
-.edu-item:nth-child(odd)::before {
-  right: -40px;
-}
-
-.edu-item:nth-child(even)::before {
-  left: -40px;
-}
-
-.edu-icon {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
 
 /* ===== SKILLS GRID ===== */
 .skills-grid {
@@ -419,17 +394,22 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .edu-item, .edu-item:nth-child(even), .edu-item:nth-child(odd) {
-    left: 0;
+
+  .edu-wrapper {
+    height: auto;
+  }
+
+  .edu-wrapper .edu-item {
+    position: relative;
     width: 90%;
-    transform: none;
+    margin: 30px auto;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    top: auto !important;
   }
 
-  .education::before {
-    display: none;
-  }
-
-  .edu-item::before {
+  .edu-wrapper::before {
     display: none;
   }
 
@@ -439,24 +419,12 @@ body {
     overflow-y: auto;
   }
 
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .planet {
-    display: none;
-  }
-  
-  .skills-grid {
-    gap: 20px;
-  }
-  
+  .planet { display: none; }
+
+  .skills-grid { gap: 20px; }
+
   .skill-card {
     width: 100%;
     max-width: 300px;
-  }
-
-  html {
-    scroll-snap-type: y proximity;
   }
 }
